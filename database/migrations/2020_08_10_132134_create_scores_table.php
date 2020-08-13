@@ -15,7 +15,11 @@ class CreateScoresTable extends Migration
     {
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
+            $table->integer('target');
+            $table->integer('distance');
             $table->integer('score');
+            $table->unsignedBigInteger('archery_session_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

@@ -2,14 +2,14 @@
 
 namespace Tests\Feature;
 
-use App\ArcherySession as ArcherySessionModel;
+use App\ArcherySession;
 use App\Http\Livewire\CreateArcherySession;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class ArcherySession extends TestCase
+class ArcherySessionTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -22,7 +22,7 @@ class ArcherySession extends TestCase
             ->set('name', 'My Session')
             ->call('create');
 
-        $this->assertTrue(ArcherySessionModel::whereName('My Session')
+        $this->assertTrue(ArcherySession::whereName('My Session')
         ->whereUserId(1)
         ->exists());
     }
