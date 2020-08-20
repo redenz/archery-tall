@@ -3,6 +3,7 @@
     <div>
         Targets
     </div>
+    <livewire:create-target-score :session="$this->archerySession" />
     <table>
         @foreach($this->archerySession->scores as $score)
         <tr>

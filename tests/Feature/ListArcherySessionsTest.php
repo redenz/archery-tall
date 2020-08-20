@@ -7,25 +7,25 @@ use App\Http\Livewire\ArcherySessions;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+use ScoresSeeder;
 use Tests\TestCase;
 
-class ListArcherySessions extends TestCase
+class ListArcherySessionsTest extends TestCase
 {
     use RefreshDatabase;
 
     /** @test */
     public function it_lists_archery_sessions()
     {
-        $user = factory(User::class)->create();
+        $this->seed(ScoresSeeder::class);
 
-        factory(ArcherySession::class)->create([
-           'user_id' => $user->id,
-           'name' => 'My Session',
-       ]);
-
-        $this->actingAs($user);
-
+        $this->login();
         Livewire::test(ArcherySessions::class)
-            ->assertSee('My Session');
+            ->assertSee('Test Session');
+    }
+
+    /** @test */
+    public function it_adds_archery_session_scores()
+    {
     }
 }

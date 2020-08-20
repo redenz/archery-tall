@@ -9,6 +9,8 @@ class ArcherySession extends Component
 {
     public $archerySession;
 
+    protected $listeners = ['scoreAdded' => '$refresh'];
+
     public function mount($id)
     {
         $this->archerySession = SessionModel::with('scores')->find($id);
