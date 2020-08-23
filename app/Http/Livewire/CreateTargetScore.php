@@ -18,10 +18,16 @@ class CreateTargetScore extends Component
         $this->session = $session;
     }
 
-    public function create()
+    public function getNextTargetProperty()
+    {
+        return $this->session->scores->count() + 1;
+    }
+
+    public function create($score)
     {
         $this->validate(
             ['distance' => 'required|integer']);
+        $this->score = $score;
 
         $this->session->scores()->create([
                 'distance'=> $this->distance,

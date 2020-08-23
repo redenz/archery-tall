@@ -11,6 +11,20 @@ class ArcherySession extends Component
 
     protected $listeners = ['scoreAdded' => '$refresh'];
 
+    public function getAverageDistanceProperty()
+    {
+        return $this->archerySession->scores->average(function ($score) {
+            return $score->distance;
+        });
+    }
+
+    public function getAverageScoreProperty()
+    {
+        return $this->archerySession->scores->average(function ($score) {
+            return $score->score;
+        });
+    }
+
     public function mount($id)
     {
         $this->archerySession = SessionModel::with('scores')->find($id);
