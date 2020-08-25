@@ -50,4 +50,5 @@ Route::middleware('auth')->group(function () {
 
     Route::livewire('/sessions', 'archery-sessions');
     Route::livewire('/sessions/{id}', 'archery-session');
+    Route::livewire('/home', 'archery-sessions');
 });
