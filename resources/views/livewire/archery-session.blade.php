@@ -6,11 +6,11 @@
             <div class="flex items-center">
                 <h1 class="flex-1 text-lg leading-7 font-medium">Targets</h1>
                 <div class="flex space-x-4 justify-end text-sm text-gray-600">
-                    <div class="flex">
+                    <div class="flex space-x-2">
                         <div>Avg Dist:</div>
                         <div>{{$this->averageDistance}} yds</div>
                     </div>
-                    <div class="flex">
+                    <div class="flex space-x-2">
                         <div>Avg Score:</div>
                         <div>{{$this->averageScore}}</div>
                     </div>

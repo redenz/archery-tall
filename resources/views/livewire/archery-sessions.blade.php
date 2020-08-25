@@ -34,7 +34,7 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                         <div class="text-sm leading-5 text-gray-500 group-hover:text-gray-900 font-medium truncate">
-                            {{$session->created_at->toDateString()}}
+                            @if($session){{$session->created_at->toDateString()}}@endif
                         </div>
                     </a>
                 </div>
