@@ -13,16 +13,16 @@ class ArcherySession extends Component
 
     public function getAverageDistanceProperty()
     {
-        return $this->archerySession->scores->average(function ($score) {
+        return number_format($this->archerySession->scores->average(function ($score) {
             return $score->distance;
-        });
+        }), 1);
     }
 
     public function getAverageScoreProperty()
     {
-        return $this->archerySession->scores->average(function ($score) {
+        return number_format($this->archerySession->scores->average(function ($score) {
             return $score->score;
-        });
+        }), 1);
     }
 
     public function mount($id)

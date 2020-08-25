@@ -1,3 +1,73 @@
+@if($mode == 'edit')
+<li class="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6">
+    <div class="mt-2 pt-2">
+        Target: {{$score->target}}
+        <div class="mt-2 grid grid-cols-8 row-gap-6 col-gap-4 sm:grid-cols-6">
+            <div class="col-span-2">
+                <label for="first_name" class="block text-sm font-medium leading-5 text-gray-700">
+                    Distance
+                </label>
+                <div class="mt-1 rounded-md shadow-sm">
+                    <input id="distance" wire:model="distance" value="{{$score->distance}}"
+                        class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                </div>
+            </div>
+
+            <div class="sm:col-span-3">
+                <label for="country" class="block text-sm font-medium leading-5 text-gray-700">
+                    Score
+                </label>
+                <div class="mt-1 rounded-md shadow-sm">
+                    <span class="relative z-0 inline-flex shadow-sm rounded-md">
+
+                        <button type="button" wire:click="update(12)"
+                            class=" relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white
+                                                            text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none
+                                                            focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition
+                                                            ease-in-out duration-150 {{$score->score == 12 ? 'bg-indigo-200' : ''}}">
+
+                            12
+                        </button>
+                        <button type="button" wire:click="update(10)"
+                            class=" -ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm
+                                                            leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none
+                                                            focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition
+                                                            ease-in-out duration-150 {{$score->score == 10 ? 'bg-indigo-200' : ''}}">
+                            10
+                        </button>
+                        <button type="button" wire:click="update(8)"
+                            class=" -ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300
+                                                            bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10
+                                                            focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100
+                                                            active:text-gray-700 transition ease-in-out duration-150 {{$score->score == 8 ? 'bg-indigo-200' : ''}}">
+                            8
+                        </button>
+                        <button type="button" wire:click="update(5)"
+                            class=" -ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300
+                                                            bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10
+                                                            focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100
+                                                            active:text-gray-700 transition ease-in-out duration-150 {{$score->score == 5 ? 'bg-indigo-200' : ''}}">
+                            5
+                        </button>
+                        <button type="button" wire:click="update(0)"
+                            class=" -ml-px relative inline-flex items-center px-4 py-2 rounded-r-md
+                                                border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700
+                                                hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300
+                                                focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition
+                                                ease-in-out duration-150 {{$score->score == 0 ? 'bg-indigo-200' : ''}}">
+                            0
+                        </button>
+                    </span>
+                </div>
+                <button type="button" wire:click="remove"
+                    class="block mt-8 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-50 focus:outline-none focus:border-red-300 focus:shadow-outline-red active:bg-red-200 transition ease-in-out duration-150">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</li>
+@else
 <li class="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6">
     <div class="flex items-center justify-between space-x-4">
         <!-- Repo name and link -->
@@ -23,7 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="sm:hidden" wire:click='$set(' moode', 'edit' )'>
+        <div class="sm:hidden" wire:click='$set("mode", "edit" )'>
             <svg viewBox="0 0 20 20" fill="currentColor" class="text-gray-500 pencil-alt w-6 h-6">
                 <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
                 <path fill-rule="evenodd"
@@ -51,3 +121,4 @@
         </div>
     </div>
 </li>
+@endif

@@ -39,6 +39,8 @@ class CreateTargetScore extends Component
         $this->clearForm();
 
         $this->emit('scoreAdded');
+
+        session()->flash('message', 'Post successfully updated.');
     }
 
     public function clearForm()

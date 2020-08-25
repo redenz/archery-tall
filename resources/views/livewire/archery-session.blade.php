@@ -19,7 +19,7 @@
         </div>
         <ul class="relative z-0 divide-y divide-gray-200 border-b border-gray-200" x-max="1">
             @foreach($this->archerySession->scores->reverse() as $score)
-            <livewire:score-item :score="$score">
+            <livewire:score-item :score="$score" :key="$score->id">
                 @endforeach
         </ul>
     </div>

@@ -1,3 +1,0 @@
-<div>
-    Edit Score
-</div>
