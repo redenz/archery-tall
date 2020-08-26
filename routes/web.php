@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::get('/', function () {
+    if (auth()->check()) {
+        return redirect('/sessions');
+    }
+
+    return view('welcome');
+})->name('home');
 
 Route::layout('layouts.auth')->group(function () {
     Route::middleware('guest')->group(function () {
