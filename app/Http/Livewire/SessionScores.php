@@ -8,6 +8,8 @@ class SessionScores extends Component
 {
     public $session;
 
+    protected $listeners = ['scoreAdded' => '$refresh'];
+
     public function mount($session)
     {
         $this->session = $session;
