@@ -172,7 +172,7 @@
         </nav>
 
         <main>
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-gray-100">
                 @yield('content')
             </div>
         </main>
