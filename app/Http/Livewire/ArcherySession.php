@@ -23,6 +23,16 @@ class ArcherySession extends Component
         }), 1);
     }
 
+    public function getTotalScoreProperty()
+    {
+        return $this->archerySession->scores->sum('score');
+    }
+
+    public function getTotalDistanceProperty()
+    {
+        return $this->archerySession->scores->sum('distance');
+    }
+
     public function mount($id)
     {
         $this->archerySession = SessionModel::with('scores')->find($id);
