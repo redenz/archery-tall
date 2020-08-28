@@ -9,6 +9,8 @@ class ArcherySession extends Component
 {
     public $archerySession;
 
+    protected $listeners = ['scoreAdded' => '$refresh'];
+
     public function getAverageDistanceProperty()
     {
         return number_format($this->archerySession->scores->average(function ($score) {
