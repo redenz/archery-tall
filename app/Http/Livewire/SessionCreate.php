@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\ArcherySession;
 use Livewire\Component;
 
-class CreateSession extends Component
+class SessionCreate extends Component
 {
     public $mode;
     public $sessionName;
@@ -27,6 +27,6 @@ class CreateSession extends Component
 
     public function render()
     {
-        return view('livewire.create-session');
+        return view('livewire.session-create');
     }
 }

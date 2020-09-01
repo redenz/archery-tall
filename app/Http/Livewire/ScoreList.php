@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class SessionScores extends Component
+class ScoreList extends Component
 {
     public $session;
 

@@ -13,9 +13,9 @@
         </div>
     </div>
     <div class="mt-2">
-        <livewire:create-target-score :session="$this->archerySession" />
+        <livewire:score-create :session="$this->archerySession" />
     </div>
-    <livewire:session-scores :session="$this->archerySession" />
-    <livewire:archery-session-stats :session="$this->archerySession" />
+    <livewire:score-list :session="$this->archerySession" />
+    <livewire:session-stats :session="$this->archerySession" />
 </div>
 </div>

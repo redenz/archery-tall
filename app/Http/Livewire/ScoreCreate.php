@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\ArcherySession;
 use Livewire\Component;
 
-class CreateTargetScore extends Component
+class ScoreCreate extends Component
 {
     public $distance;
     public $score;
@@ -53,6 +53,6 @@ class CreateTargetScore extends Component
     {
         $target = $this->session->scores->count() + 1;
 
-        return view('livewire.create-target-score', ['target' => $target]);
+        return view('livewire.score-create', ['target' => $target]);
     }
 }

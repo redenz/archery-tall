@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire;
 
-use App\SessionStats;
+use App\SessionStats as SessionStatsModel;
 use Livewire\Component;
 
-class ArcherySessionStats extends Component
+class SessionStats extends Component
 {
     public $session;
 
@@ -18,9 +18,9 @@ class ArcherySessionStats extends Component
 
     public function render()
     {
-        $stats = SessionStats::avgScoreByDistance($this->session->scores);
+        $stats = SessionStatsModel::avgScoreByDistance($this->session->scores);
 
-        return view('livewire.archery-session-stats', [
+        return view('livewire.session-stats', [
             'stats' => $stats,
         ]);
     }

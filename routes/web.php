@@ -54,7 +54,7 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', 'Auth\LogoutController')
         ->name('logout');
 
-    Route::livewire('/sessions', 'archery-sessions');
-    Route::livewire('/sessions/{id}', 'archery-session');
-    Route::livewire('/home', 'archery-sessions');
+    Route::livewire('/sessions', 'sessions');
+    Route::livewire('/sessions/{id}', 'session');
+    Route::livewire('/home', 'sessions');
 });
