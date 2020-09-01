@@ -18,4 +18,3 @@
     <livewire:score-list :session="$this->archerySession" />
     <livewire:session-stats :session="$this->archerySession" />
 </div>
-</div>

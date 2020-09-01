@@ -10,7 +10,7 @@
         <li class="relative pl-4 pr-6 py-5 hover:bg-gray-50 sm:py-6 sm:pl-6 lg:pl-8 xl:pl-6" :key="$session->id">
             <div class="flex items-center justify-between space-x-4">
                 <!-- Repo name and link -->
-                <div class="min-w-0 space-y-3">
+                <div class="min-w-0 space-y-3 flex-1">
                     <div class="flex items-center space-x-3">
                         <span aria-label="Running"
                             class="h-4 w-4 bg-green-100 rounded-full flex items-center justify-center">
@@ -25,7 +25,7 @@
                                     </a>
                                 </h2>
                             </span>
-                            <div class="text-sm leading-5 text-gray-500 group-hover:text-gray-900 font-medium truncate">
+                            <div class="text-xs leading-5 text-gray-500 group-hover:text-gray-900 font-medium truncate">
                                 {{optional($session->created_at)->format("M d, Y")}}
                             </div>
                         </div>
